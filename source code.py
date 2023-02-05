@@ -23,7 +23,11 @@ def op():
     if operation == "+":
         output = num1 + num2
     elif operation == "-":
-        output = num1 - num2
+        try:
+            output = num1 - num2
+        except ZeroDivisionError:
+            print("you can't do zero division")
+            op()
     elif operation == "*":
         output = num1 * num2
     elif operation == "/":
