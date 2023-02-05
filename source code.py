@@ -23,16 +23,19 @@ def op():
     if operation == "+":
         output = num1 + num2
     elif operation == "-":
+        output = num1 - num2
+       
+    elif operation == "*":
+        output = num1 * num2
+    
+    elif operation == "/":
+        #if you divide by zero you get zero division error, so we have to catch that
         try:
-            output = num1 - num2
+            output = num1 / num2
         except ZeroDivisionError:
             print("you can't do zero division")
             op()
-    elif operation == "*":
-        output = num1 * num2
-    elif operation == "/":
-        output = num1 / num2
-
+    
     # if operation input is wrong:
     else:
         # tell the use what they have done wrong:
